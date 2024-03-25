@@ -7,7 +7,7 @@ if [ "${CODESPACES}" = "true" ]; then
 fi
 
 sudo chmod 666 /var/run/docker.sock || true
-sudo cp -R /tmp/.ssh-localhost/* ~/.ssh
+# sudo cp -R /tmp/.ssh-localhost/* ~/.ssh
 sudo chown -R $(whoami):$(whoami) ~ || true ?>/dev/null
 sudo chmod 400 ~/.ssh/*
 
@@ -16,9 +16,12 @@ pre-commit install
 pre-commit autoupdate
 
 git config --global --add safe.directory /tf/caf
-git config --global --add safe.directory /tf/caf/landingzones
-git config --global --add safe.directory /tf/caf/landingzones/aztfmod
-git config --global --add safe.directory /tf/caf/aztfmod
+# git config --global --add safe.directory /tf/caf/landingzones
+# git config --global --add safe.directory /tf/caf/landingzones/aztfmod
+# git config --global --add safe.directory /tf/caf/aztfmod
+git config --global --add safe.directory /tf/caf/templates
+git config --global --add safe.directory /tf/caf/modules
+git config --global --add safe.directory /tf/caf/gcc_starter_kit
 
 git config pull.rebase false 
 
