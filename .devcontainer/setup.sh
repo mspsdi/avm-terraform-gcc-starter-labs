@@ -15,19 +15,26 @@ git config --global core.editor vim
 pre-commit install
 pre-commit autoupdate
 
-git config --global --add safe.directory /tf/caf
-# git config --global --add safe.directory /tf/caf/landingzones
-# git config --global --add safe.directory /tf/caf/landingzones/aztfmod
-# git config --global --add safe.directory /tf/caf/aztfmod
-git config --global --add safe.directory /tf/caf/templates
-git config --global --add safe.directory /tf/caf/modules
-git config --global --add safe.directory /tf/caf/gcc_starter_kit
+git config --global --add safe.directory /tf/avm
+# git config --global --add safe.directory /tf/avm/landingzones
+# git config --global --add safe.directory /tf/avm/landingzones/aztfmod
+# git config --global --add safe.directory /tf/avm/aztfmod
+git config --global --add safe.directory /tf/avm/templates
+git config --global --add safe.directory /tf/avm/modules
+git config --global --add safe.directory /tf/avm/gcc_starter_kit
 
 git config pull.rebase false 
 
-git clone https://github.com/mspsdi/avm-terraform-gcc-starter-kit /tf/caf
-mkdir /tf/caf/gcc_starter_labs
-cp /tf/caf/templates/landingzone/configuration/0-setup_gcc_dev_env /tf/caf/gcc_starter_labs/landingzone/configuration/0-setup_gcc_dev_env
-cp /tf/caf/templates/landingzone/configuration/0-launchpad/launchpad /tf/caf/gcc_starter_labs/landingzone/configuration/0-launchpad/launchpad
-cp /tf/caf/templates/landingzone/configuration/1-landingzones/networking_template /tf/caf/gcc_starter_labs/landingzone/configuration/1-landingzones/networking_template
-cp /tf/caf/templates/landingzone/configuration/2-solution_accelerators/project/solution_accelerators_template /tf/caf/gcc_starter_labs/landingzone/configuration/2-solution_accelerators/project/solution_accelerators_template
+if [ ! -d /tf/avm/gcc_starter_kit ]; then
+    git clone https://github.com/mspsdi/avm-terraform-gcc-starter-kit /tf/avm/tmp
+    mv /tf/avm/tmp/gcc_starter_kit /tf/avm/gcc_starter_kit
+    mv /tf/avm/tmp/templates /tf/avm/templates
+    mv /tf/avm/tmp/modules /tf/avm/modules
+    sudo chmod 777 /tf/avm/gcc_starter_kit
+    mkdir /tf/avm/gcc_starter_kit/landingzone/configuration/1-landingzones
+    mkdir /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators
+    mkdir /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project
+    cp -R /tf/avm/templates/landingzone/configuration/1-landingzones/networking_template /tf/avm/gcc_starter_kit/landingzone/configuration/1-landingzones
+    cp -R /tf/avm/templates/landingzone/configuration/2-solution_accelerators/project/solution_accelerators_template /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project
+    rm -rf /tf/avm/tmp
+fi

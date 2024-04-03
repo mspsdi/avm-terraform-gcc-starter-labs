@@ -5,8 +5,8 @@
 
   version: '3.7'
   services:
-    rover:
-      image: aztfmod/rover:1.7.5-2403.1406 # aztfmod/rover-agent:1.7.5-2403.1406-github # aztfmod/rover:1.6.4-2311.2003 # aztfmod/rover:1.6.0-rc1-2310.0211 # aztfmod/rover:1.5.2-2307.0508 # aztfmod/rover:1.5.1-2307.0308 # aztfmod/rover:1.5.0-rc1-2306.0205 # aztfmod/rover:1.2.5-2208.0208
+    avm:
+      image: gccstarterkit/gccstarterkit-avm-sde:0.1 # aztfmod/rover-agent:1.7.5-2403.1406-github # aztfmod/rover:1.6.4-2311.2003 # aztfmod/rover:1.6.0-rc1-2310.0211 # aztfmod/rover:1.5.2-2307.0508 # aztfmod/rover:1.5.1-2307.0308 # aztfmod/rover:1.5.0-rc1-2306.0205 # aztfmod/rover:1.2.5-2208.0208
       user: vscode
 
       # Uncomment to access Azure VPN and rebuild container
@@ -15,14 +15,14 @@
         - NET_ADMIN
 
       labels:
-        - "caf=Azure CAF"
+        - "avm=Azure AVM"
 
       volumes:
         # This is where VS Code should expect to find your project's source code
         # and the value of "workspaceFolder" in .devcontainer/devcontainer.json
-        - ..:/tf/caf
-        - volume-caf-vscode:/home/vscode
-        - volume-caf-vscode-bashhistory:/commandhistory
+        - ..:/tf/avm
+        - volume-avm-vscode:/home/vscode
+        - volume-avm-vscode-bashhistory:/commandhistory
         - ~/.ssh:/tmp/.ssh-localhost:ro
         - /var/run/docker.sock:/var/run/docker.sock
 
@@ -30,7 +30,7 @@
       command: /bin/sh -c "while sleep 1000; do :; done"
 
   volumes:
-    volume-caf-vscode:
+    volume-avm-vscode:
       labels:
-        - "caf=Azure CAF"
-    volume-caf-vscode-bashhistory:
+        - "avm=Azure AVM"
+    volume-avm-vscode-bashhistory:
