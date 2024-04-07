@@ -1,17 +1,17 @@
-# Lab 4
-## Step 1. 
+# Lab 4 - Create Solution Accelerator Virtual Machine
+## Step 1
 ### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
 
-## Step 2. 
+## Step 2
 ### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as “vm".
 
-## Step 3. 
+## Step 3
 ### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "vm".
 
-## Step 4: 
+## Step 4
 ### Configure Virtual Machine
 
-### 4.1. 
+### 4.1
 #### Insert the following lines into the main.tf file:
 
 ```bash
@@ -27,6 +27,7 @@ module "virtualmachine1" {
 }
 ```
 
+### 4.2
 #### After line 9 of the module above, include the following virtual machine configurations:
 
 ```bash
@@ -76,14 +77,14 @@ module "virtualmachine1" {
   }   
 ```
 
-## Step 5. 
+## Step 5
 ### Navigate to the directory: /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 
 ```bash
 cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 ```
 
-## Step 6. 
+## Step 6
 ### Execute Terraform commands to initialize, plan, and apply configurations:
 
 ### Initialize Terraform with backend configuration
