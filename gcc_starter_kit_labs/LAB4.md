@@ -99,6 +99,7 @@ terraform init  -reconfigure \
 -backend-config="container_name=2-solution_accelerators" \
 -backend-config="key=solution_accelerators-project-vm.tfstate"
 ```
+#### take not of the key name above
 
 ### Generate and preview an execution plan
 ```bash
