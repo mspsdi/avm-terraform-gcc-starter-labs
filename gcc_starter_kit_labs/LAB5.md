@@ -57,7 +57,7 @@ module "keyvault1" {
 ```
 
 ### 4.3
-#### add private dns module into the "main.tf" file:
+#### Add private dns module into the "main.tf" file:
 
 ```bash
 module "private_dns_zones" {
@@ -83,7 +83,7 @@ module "private_dns_zones" {
 ```
 
 ### 4.4
-#### add key valult access policy into the "main.tf" file:
+#### Add key valult access policy into the "main.tf" file:
 
 ```bash
 resource "azurerm_key_vault_access_policy" "this" {
@@ -114,7 +114,7 @@ terraform init  -reconfigure \
 -backend-config="container_name=2-solution_accelerators" \
 -backend-config="key=solution_accelerators-project-keyvault.tfstate"
 ```
-#### take not of the key name above
+#### Note: Ensure the key above is rename to "solution_accelerators-project-keyvault.tfstate"
 
 ### Generate and preview an execution plan
 ```bash
