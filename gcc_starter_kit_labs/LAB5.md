@@ -38,7 +38,7 @@ module "keyvault1" {
 ```
 
 ### 4.2
-#### After line 9 of the module above, include the following virtual machine configurations:
+#### After line 9 of the module above, include the following Key Vault configurations:
 
 ```bash
   tenant_id                     = data.azurerm_client_config.current.tenant_id

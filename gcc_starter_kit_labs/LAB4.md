@@ -37,7 +37,7 @@ module "virtualmachine1" {
 ```
 
 ### 4.2
-#### After line 9 of the module above, include the following virtual machine configurations:
+#### After line 9 of the module above, include the following Virtual Machine configurations:
 
 ```bash
   virtualmachine_os_type                 = "Windows"
