@@ -1,4 +1,4 @@
-# Lab 4 - Create Solution Accelerator Azure Key Vault
+# Lab 5 - Create Solution Accelerator Azure Key Vault
 ## Step 1
 ### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
 
