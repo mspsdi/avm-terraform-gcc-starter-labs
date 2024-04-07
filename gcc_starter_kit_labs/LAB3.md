@@ -11,6 +11,10 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applica
 ## Step 2
 ### Duplicate the folder named "network_template" and rename the duplicate as "network_project".
 
+```bash
+cp /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_template /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project
+```
+
 ## Step 3
 ### In the file "resource_groups.tf", locate line 2 and replace "yourvnetname" with "project".
 
