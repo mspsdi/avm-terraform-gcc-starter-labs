@@ -104,14 +104,14 @@ terraform init  -reconfigure \
 ### Generate and preview an execution plan
 ```bash
 terraform plan \
--var="resource_group_name={{resource group name}}“ \
+-var="resource_group_name={{resource group name}}" \
 -var="storage_account_name={{storage account name}}" 
 ```
 
 ### Apply the Terraform configurations
 ```bash
 terraform apply -auto-approve \
--var="resource_group_name={{resource group name}}“ \
+-var="resource_group_name={{resource group name}}" \
 -var="storage_account_name={{storage account name}}" 
 ```
 
