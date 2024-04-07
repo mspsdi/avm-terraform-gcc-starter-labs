@@ -1,7 +1,8 @@
 # Lab 2 - Import gcci platform vnet and log analytics workspace terraform state
 
 ## Step 1
-### Navigate to the following directory: /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad.
+### Navigate to the following launchpad directory: 
+#### /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad.
 
 ```bash
 cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad.

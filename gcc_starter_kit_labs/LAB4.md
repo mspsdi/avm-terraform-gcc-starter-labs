@@ -1,6 +1,7 @@
 # Lab 4 - Create Solution Accelerator Virtual Machine
 ## Step 1
-### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
+### Navigate to the solution accelerators project directory: 
+#### /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
 
 ```bash
 cd /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project
@@ -82,7 +83,8 @@ module "virtualmachine1" {
 ```
 
 ## Step 5
-### Navigate to the directory: /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
+### Navigate to the directory: 
+#### /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 
 ```bash
 cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm

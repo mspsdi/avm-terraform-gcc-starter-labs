@@ -1,7 +1,8 @@
 # Lab 3 - Create Virtual Subnets
 
 ## Step 1
-### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications.
+### Navigate to the landingzone applications directory: 
+#### /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications.
 
 ```bash
 cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications
@@ -21,7 +22,8 @@ subnets = local.global_settings.subnets.project
 ```
 
 ## Step 5
-### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project
+### Navigate to the networking project directory: 
+#### /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project
 
 ```bash
 cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project
