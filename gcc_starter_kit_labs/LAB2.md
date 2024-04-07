@@ -17,7 +17,7 @@ environment: "sandpit"
 ```
 
 ## Step 3 
-### Add the specified subnet names and address prefixes to line 12 of the config.yaml file:
+### Add the specified subnet names and address prefixes to line 12 of the "config.yaml" file:
 
 ```bash
 WebSubnet: # DO NOT CHANGE subnet name

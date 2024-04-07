@@ -14,7 +14,7 @@ cd /tf/avm/gcc_starter_kit_labs/1-landingzones/applications
 ### In the file resource_groups.tf, locate line 2 and replace "yourvnetname" with "project".
 
 ## Step 4
-### Confirm that in the file main.virtual_subnets.tf, line 6 reads as follows:
+### Confirm that in the file "main.virtual_subnets.tf", line 6 reads as follows:
 
 ```bash
 subnets = local.global_settings.subnets.project

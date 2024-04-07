@@ -2,6 +2,10 @@
 ## Step 1
 ### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
 
+```bash
+cd /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project
+```
+
 ## Step 2
 ### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as “vm".
 
@@ -9,10 +13,10 @@
 ### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "vm".
 
 ## Step 4
-### Configure Virtual Machine
+### Configure Virtual Machine terraform module
 
 ### 4.1
-#### Insert the following lines into the main.tf file:
+#### Insert the following lines into the "main.tf" file:
 
 ```bash
 module "virtualmachine1" {
@@ -110,4 +114,4 @@ terraform apply -auto-approve \
 -var="storage_account_name={{storage account name}}" 
 ```
 
-### Note: Please replace {{resource group name}} and {{storage account name}} with the actual names of the resource group and storage account created during LAB1.
+### Note: Please replace {{resource group name}} and {{storage account name}} with the actual names of the resource group and storage account created during Lab1.
