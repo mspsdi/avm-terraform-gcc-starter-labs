@@ -38,7 +38,7 @@ terraform init  -reconfigure \
 -backend-config="container_name=1-landingzones" \
 -backend-config="key=network-spoke-project.tfstate"
 ```
-#### Note: Ensure the key above is rename to "solution_accelerators-project-vm.tfstate"
+#### Note: Ensure the key above is rename to "network-spoke-project.tfstate"
 
 ### Generate and preview an execution plan
 ```bash
