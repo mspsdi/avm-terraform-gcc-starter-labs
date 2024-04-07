@@ -1,12 +1,18 @@
-# Step 1. Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
+# Lab 4
+## Step 1. 
+### Navigate to the directory: /tf/avm/gcc_starter_kit_labs/2-solution_accelerators/project.
 
-# Step 2. Duplicate the folder named "solution_accelerators_template" and rename the duplicate as “vm".
+## Step 2. 
+### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as “vm".
 
-# Step 3. In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "vm".
+## Step 3. 
+### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "vm".
 
-# Step 4: Configure Virtual Machine
+## Step 4: 
+### Configure Virtual Machine
 
-## 4.1. Insert the following lines into the main.tf file:
+### 4.1. 
+#### Insert the following lines into the main.tf file:
 
 ```bash
 module "virtualmachine1" {
@@ -21,7 +27,7 @@ module "virtualmachine1" {
 }
 ```
 
-## After line 9 of the module above, include the following virtual machine configurations:
+#### After line 9 of the module above, include the following virtual machine configurations:
 
 ```bash
   virtualmachine_os_type                 = "Windows"
@@ -70,16 +76,17 @@ module "virtualmachine1" {
   }   
 ```
 
-
-# Step 5. Navigate to the directory: /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
+## Step 5. 
+### Navigate to the directory: /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 
 ```bash
 cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 ```
 
-# Step 6. Execute Terraform commands to initialize, plan, and apply configurations:
+## Step 6. 
+### Execute Terraform commands to initialize, plan, and apply configurations:
 
-## Initialize Terraform with backend configuration
+### Initialize Terraform with backend configuration
 ```bash
 terraform init  -reconfigure \
 -backend-config="resource_group_name={{resource group name}}" \
@@ -88,14 +95,14 @@ terraform init  -reconfigure \
 -backend-config="key=solution_accelerators-project-vm.tfstate"
 ```
 
-## Generate and preview an execution plan
+### Generate and preview an execution plan
 ```bash
 terraform plan \
 -var="resource_group_name={{resource group name}}“ \
 -var="storage_account_name={{storage account name}}" 
 ```
 
-## Apply the Terraform configurations
+### Apply the Terraform configurations
 ```bash
 terraform apply -auto-approve \
 -var="resource_group_name={{resource group name}}“ \
