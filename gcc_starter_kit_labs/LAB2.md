@@ -5,7 +5,7 @@
 #### /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad.
 
 ```bash
-cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad.
+cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad
 ```
 
 ## Step 2
