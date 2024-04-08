@@ -9,11 +9,3 @@ subnets:
     # e.g.
     # WebSubnet: # DO NOT CHANGE subnet name
     #   address_prefixes: ["100.64.0.0/27"]          
-    WebSubnet: # DO NOT CHANGE subnet name
-        address_prefixes: ["100.64.0.0/27"]
-    AppSubnet: # DO NOT CHANGE subnet name
-        address_prefixes: ["100.64.0.32/27"]
-    DbSubnet: # DO NOT CHANGE subnet name
-        address_prefixes: ["100.64.0.64/27"]
-    ServiceSubnet: # DO NOT CHANGE subnet name
-      address_prefixes: ["100.64.0.96/27"]
