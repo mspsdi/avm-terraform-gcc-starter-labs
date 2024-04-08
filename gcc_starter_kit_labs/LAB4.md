@@ -1,4 +1,4 @@
-# Lab 4 - Create Solution Accelerator Virtual Machine
+# Lab 4 - Create Solution Accelerator Azure Key Vault
 ## Step 1
 ### Navigate to the solution accelerators project directory: 
 #### /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project.
@@ -8,90 +8,58 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerator
 ```
 
 ## Step 2
-### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as "vm".
+### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as "lab".
 
 ## Step 3
-### In the file resource_groups.tf of vm folder, locate line 2 and replace "yourresourcegroup" with "vm".
+### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "lab".
 
 ## Step 4
-### Configure Virtual Machine terraform module
+### Configure Key Vault terraform module
 
 ### 4.1
 #### Insert the following lines into the "main.tf" file:
 
 ```bash
-module "virtualmachine1" {
-  source = "Azure/avm-res-compute-virtualmachine/azurerm"
-  version = "0.1.0"
+module "keyvault1" {
+  source  = "Azure/avm-res-keyvault-vault/azurerm"
+  version = "0.5.2"  
 
-  enable_telemetry                       = var.enable_telemetry
-  location                               = azurerm_resource_group.this.location
-  resource_group_name                    = azurerm_resource_group.this.name
-  # add your virtual machine configuration below
+  name                          = "${module.naming.key_vault.name_unique}${random_string.this.result}" 
+  enable_telemetry              = var.enable_telemetry
+  location                      = azurerm_resource_group.this.location
+  resource_group_name           = azurerm_resource_group.this.name
+  # add your keyvault configuration below
 
 }
 ```
 
 ### 4.2
-#### After line 9 of the module above, include the following Virtual Machine configurations:
+#### After line 9 of the module above, include the following Key Vault configurations:
 
 ```bash
-  virtualmachine_os_type                 = "Windows"
-  name                                   = module.naming.virtual_machine.name_unique
-  virtualmachine_sku_size                = "Standard_DS1_v2" # module.get_valid_sku_for_deployment_region.sku
-  admin_username                         = "adminuser"
-  admin_password                         = "P@ssw0rd1234!"  # Please replace this with your own secure password
-
-  source_image_reference = {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2022-datacenter-g2"
-    version   = "latest"
+  tenant_id           = data.azurerm_client_config.current.tenant_id
+  network_acls = {
+    default_action = "Allow"
   }
 
-  network_interfaces = {
-    network_interface_1 = {
-      name = module.naming.network_interface.name_unique
-      ip_configurations = {
-        ip_configuration_1 = {
-          name                          = "${module.naming.network_interface.name_unique}-ipconfig1"
-          private_ip_subnet_resource_id = local.remote.networking.virtual_networks.spoke_project.virtual_subnets.subnets["AppSubnet"].id 
-          create_public_ip_address      = false # true
-          public_ip_address_name        = null # module.naming.public_ip.name_unique
-        }
-      }
+  role_assignments = {
+    deployment_user_secrets = {
+      role_definition_id_or_name = "Key Vault Secrets Officer"
+      principal_id               = data.azurerm_client_config.current.object_id
     }
   }
 
-  data_disk_managed_disks = {
-    disk1 = {
-      name                 = "${module.naming.managed_disk.name_unique}-lun0"
-      storage_account_type = "StandardSSD_LRS"
-      lun                  = 0
-      caching              = "ReadWrite"
-      disk_size_gb         = 32
-    }
+  wait_for_rbac_before_secret_operations = {
+    create = "60s"
   }
-
-  tags = {
-    scenario = "windows_w_data_disk_and_public_ip"
-  }
-```
-
-### 4.3 goto line 1 of output.tf to add in the below output code
-
-```bash
-output "vm_ip_address" {
-  value = module.virtualmachine1.virtual_machine.private_ip_address 
-}
 ```
 
 ## Step 5
 ### Navigate to the directory: 
-#### /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
+#### /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/keyvault
 
 ```bash
-cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/vm
+cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/lab
 ```
 
 ## Step 6
@@ -103,9 +71,9 @@ terraform init  -reconfigure \
 -backend-config="resource_group_name={{resource group name}}" \
 -backend-config="storage_account_name={{storage account name}}" \
 -backend-config="container_name=2-solution-accelerators" \
--backend-config="key=solution_accelerators-project-vm.tfstate"
+-backend-config="key=solution_accelerators-project-lab.tfstate"
 ```
-#### Note: Ensure the key above is rename to "solution_accelerators-project-vm.tfstate"
+#### Note: Ensure the key above is rename to "solution_accelerators-project-keyvault.tfstate"
 
 ### Generate and preview an execution plan
 ```bash

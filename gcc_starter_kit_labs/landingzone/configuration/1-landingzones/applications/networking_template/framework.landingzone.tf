@@ -36,8 +36,8 @@ variable "storage_account_name" {
 module "landingzone" {
   source="./../../../../../../modules/framework/terraform-azurerm-azure-accelerator-framework"
 
-  resource_group_name  = var.resource_group_name # "{{resource_group_name}}" # DO NOT CHANGE - codegen
-  storage_account_name = var.storage_account_name # "{{storage_account_name}}" # DO NOT CHANGE - codegen 
+  resource_group_name  = var.resource_group_name # "ttsdev-rg-launchpad" # DO NOT CHANGE - codegen
+  storage_account_name = var.storage_account_name # "ttsdevstgtfstategof" # DO NOT CHANGE - codegen 
 }
 
 module "naming" {

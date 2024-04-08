@@ -1,4 +1,4 @@
-prefix: "aoaidev"
+prefix: "yourprefix"
 location: "southeastasia"
 environment: "sandpit"
 # subnets cidr configuration
