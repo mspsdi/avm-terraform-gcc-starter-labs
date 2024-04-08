@@ -41,4 +41,4 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad/
 ### Take some time to explore the import.sh and the remaining files within the folder to enhance your understanding.
 
 ## Step 6
-### Make a record of the "resource group name" and "storage account name" generated during this lab session for future reference in Lab 3, 4 and 5.
+### Make a record of the "resource group name" and "storage account name" generated during this lab session for future reference in Lab 4.

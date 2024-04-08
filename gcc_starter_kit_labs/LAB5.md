@@ -10,10 +10,6 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerator
 ## Step 2
 ### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as "keyvault".
 
-```bash
-cp /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/solution_accelerators_template /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/keyvault
-```
-
 ## Step 3
 ### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with “keyvault".
 
