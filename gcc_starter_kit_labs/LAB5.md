@@ -113,7 +113,7 @@ cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/pro
 terraform init  -reconfigure \
 -backend-config="resource_group_name={{resource group name}}" \
 -backend-config="storage_account_name={{storage account name}}" \
--backend-config="container_name=2-solution_accelerators" \
+-backend-config="container_name=2-solution-accelerators" \
 -backend-config="key=solution_accelerators-project-keyvault.tfstate"
 ```
 #### Note: Ensure the key above is rename to "solution_accelerators-project-keyvault.tfstate"

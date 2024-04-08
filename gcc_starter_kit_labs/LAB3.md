@@ -20,6 +20,15 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applica
 ```bash
 subnets = local.global_settings.subnets.project
 ```
+## Step 5
+### remove unwanted files if required
+
+```bash
+cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project
+rm main.diagnostics.tf
+rm main.network_security_groups.tf
+rm main.route_tables.tf
+```
 
 ## Step 5
 ### Navigate to the networking project directory: 
@@ -60,3 +69,8 @@ terraform apply -auto-approve \
 
 ## Step 7
 ### Take some time to explore the remaining files within the folder to enhance your understanding.
+
+## Step 8 (Optional)
+### Add in  main.route_tables.tf
+### Add in  main.network_security_groups.tf
+### Add in  main.diagnostics.tf

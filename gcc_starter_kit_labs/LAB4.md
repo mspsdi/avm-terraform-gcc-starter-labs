@@ -11,7 +11,7 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerator
 ### Duplicate the folder named "solution_accelerators_template" and rename the duplicate as "vm".
 
 ## Step 3
-### In the file resource_groups.tf, locate line 2 and replace "yourresourcegroup" with "vm".
+### In the file resource_groups.tf of vm folder, locate line 2 and replace "yourresourcegroup" with "vm".
 
 ## Step 4
 ### Configure Virtual Machine terraform module
@@ -82,7 +82,7 @@ module "virtualmachine1" {
 
 ```bash
 output "vm_ip_address" {
-  value = azurerm_windows_virtual_machine.example.private_ip_address
+  value = module.virtualmachine1.virtual_machine.private_ip_address 
 }
 ```
 
@@ -91,7 +91,7 @@ output "vm_ip_address" {
 #### /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
 
 ```bash
-cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/vm
+cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/vm
 ```
 
 ## Step 6
@@ -102,7 +102,7 @@ cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/pro
 terraform init  -reconfigure \
 -backend-config="resource_group_name={{resource group name}}" \
 -backend-config="storage_account_name={{storage account name}}" \
--backend-config="container_name=2-solution_accelerators" \
+-backend-config="container_name=2-solution-accelerators" \
 -backend-config="key=solution_accelerators-project-vm.tfstate"
 ```
 #### Note: Ensure the key above is rename to "solution_accelerators-project-vm.tfstate"
