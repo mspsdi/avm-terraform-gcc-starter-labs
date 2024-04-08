@@ -3,6 +3,8 @@
 #------------------------------------------------------------------------
 # functions
 #------------------------------------------------------------------------
+COPY_FROM_TEMPLATE="0"
+
 parse_yaml() {
    local prefix=$2
    local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
@@ -76,8 +78,12 @@ if [ ! -d ./../../../configuration/2-solution_accelerators ]; then
   mkdir ./../../../configuration/2-solution_accelerators
 
 fi
-cp -a ./../../../../../templates/landingzone/configuration/1-landingzones ./../../../configuration
-cp -a ./../../../../../templates/landingzone/configuration/2-solution_accelerators ./../../../configuration
+
+
+if [[ "$COPY_FROM_TEMPLATE" == "1" ]]; then
+  cp -a ./../../../../../templates/landingzone/configuration/1-landingzones ./../../../configuration
+  cp -a ./../../../../../templates/landingzone/configuration/2-solution_accelerators ./../../../configuration
+fi
 
 #------------------------------------------------------------------------
 # get current subscriptin information

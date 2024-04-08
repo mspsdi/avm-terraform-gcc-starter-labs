@@ -1,8 +1,8 @@
-output "acr_resource" {
-  value       = module.container_registry 
-  description = "The Azure Acr resource"
-  sensitive = true  
-}
+# output "acr_resource" {
+#   value       = module.container_registry 
+#   description = "The Azure Acr resource"
+#   sensitive = true  
+# }
 
 output "global_settings" {
   value       = local.global_settings
