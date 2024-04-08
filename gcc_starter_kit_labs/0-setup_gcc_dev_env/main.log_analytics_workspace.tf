@@ -1,5 +1,5 @@
 module "log_analytics_workspace" {
-  source  = "./../../modules/diagnostics/terraform-azurerm-mspsdi-avm-res-diagnostics-loganalyticsworkspace"
+  source  = "./../../modules/diagnostics/terraform-azurerm-loganalyticsworkspace"
 
   name                             = local.log_analytics_workspace_name 
   location                         = var.location
