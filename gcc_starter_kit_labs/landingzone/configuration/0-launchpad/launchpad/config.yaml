@@ -5,7 +5,8 @@ environment: "sandpit"
 subnets:
   # IMPORTANT ** comment off the below any project subnets if it is not used
   project:
-  # add your subnets information here.
-  # e.g.
-  #   WebSubnet: # DO NOT CHANGE subnet name
-  #     address_prefixes: ["100.64.0.0/27"]   
+    # TODO: add your subnet name and address prefixes here
+    # e.g.
+    # WebSubnet: # DO NOT CHANGE subnet name
+    #   address_prefixes: ["100.64.0.0/27"]          
+
