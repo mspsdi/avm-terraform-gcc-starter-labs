@@ -6,13 +6,16 @@
 ```bash
 az login --tenant <your tenant id> 
 az account set --subscription <your subscription id>
+
+# show your login account
+az account show
 ```
 
 ## Step 2
 ### Navigate to the directory for setting up GCC development environment:
 
 ```bash
-cd /tf/avm/gcc_starter_kit/0-setup_gcc_dev_env
+cd /tf/avm/gcc_starter_kit_labs/0-setup_gcc_dev_env
 ```
 
 ## Step 3
