@@ -1,4 +1,4 @@
-prefix: "ttsdev"
+prefix: "<your project code prefix>"
 location: "southeastasia"
 environment: "sandpit"
 # subnets cidr configuration
