@@ -28,6 +28,6 @@ terraform apply -auto-approve
 ```
 
 ## Step 4
-### Verify your Azure resource in Azure portal
+### Verify your Azure resources in Azure portal
 
 

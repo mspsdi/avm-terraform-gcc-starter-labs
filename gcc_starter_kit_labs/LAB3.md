@@ -15,13 +15,21 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applica
 ### In the file "resource_groups.tf" of networking_project folder, locate line 2 and replace "yourvnetname" with "project".
 
 ## Step 4
-### Confirm that in the file "main.virtual_subnets.tf", line 6 reads as follows:
+### Confirm that in the file "main.virtual_subnets.tf" line 4-6 reads as follows:
 
 ```bash
-subnets = local.global_settings.subnets.project
+  virtual_network_name  = local.remote.networking.virtual_networks.spoke_project.virtual_network.name 
+  resource_group_name   = local.remote.resource_group.name 
+  subnets = local.global_settings.subnets.project
 ```
+
+Note: 
+- virtual_network_name is assigned to the name from the local variables define in the AAF framework.
+- resource_group_name is assigned to the resource group from the local variables define in the AAF framework.
+- subnets is assigned to the variables from the config.yaml file you define in lab 2.
+
 ## Step 5
-### remove unwanted files if required
+### (optional) remove unwanted files if required
 
 ```bash
 cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/1-landingzones/applications/networking_project

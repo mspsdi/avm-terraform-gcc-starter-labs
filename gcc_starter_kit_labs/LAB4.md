@@ -90,3 +90,7 @@ terraform apply -auto-approve \
 ```
 
 ### Note: Please replace {{resource group name}} and {{storage account name}} with the actual names of the resource group and storage account created during Lab1.
+
+## Step 7
+### Verify your Azure resources in Azure portal
+

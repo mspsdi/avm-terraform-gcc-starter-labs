@@ -80,7 +80,7 @@ module "virtualmachine1" {
 cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/lab
 ```
 
-## Step 6
+## Step 4
 ### Execute Terraform commands to initialize, plan, and apply configurations:
 
 ### Note: Please replace {{resource group name}} and {{storage account name}} with the actual names of the resource group and storage account created during Lab1.
@@ -108,3 +108,7 @@ terraform apply -auto-approve \
 -var="resource_group_name={{resource group name}}" \
 -var="storage_account_name={{storage account name}}" 
 ```
+
+## Step 5
+### Verify your Azure resources in Azure portal
+
