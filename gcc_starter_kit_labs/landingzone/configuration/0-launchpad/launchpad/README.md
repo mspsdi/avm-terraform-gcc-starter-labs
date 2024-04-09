@@ -1,7 +1,7 @@
-sudo chmod -R -f 777 /tf/avm/gcc_starter_kit/landingzone/configuration/level0/gcci_platform/import.sh
-sudo chmod -R -f 777 /tf/avm/gcc_starter_kit/landingzone/configuration
+sudo chmod -R -f 777 /tf/avm/gcc_starter_kit_labs/landingzone/configuration/level0/gcci_platform/import.sh
+sudo chmod -R -f 777 /tf/avm/gcc_starter_kit_labs/landingzone/configuration
 
-cd /tf/avm/gcc_starter_kit/landingzone/configuration/0-launchpad/launchpad
+cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/0-launchpad/launchpad
 
 ./import.sh
 
