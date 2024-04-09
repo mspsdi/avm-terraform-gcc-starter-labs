@@ -11,7 +11,7 @@ cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerator
 ### Configure Virtual Machine terraform module
 
 ### 2.1
-#### Insert the following lines into the "main.tf" file:
+#### Insert the following lines into the "main.tf" file (before keyvault module):
 
 ```bash
 module "virtualmachine1" {
@@ -33,16 +33,26 @@ module "virtualmachine1" {
   virtualmachine_os_type                 = "Windows"
   name                                   = "${module.naming.virtual_machine.name}${random_string.this.result}" 
   admin_credential_key_vault_resource_id = module.keyvault1.resource.id
-  virtualmachine_sku_size                = "Standard_D2s_v3" # "Standard_D2s_v3" # "standard_d2_v2" # "Standard_D2s_v3" # "standard_d2_v2" "Standard_D8s_v3" 
-  zone                                   = "1" # random_integer.zone_index.result 
+  virtualmachine_sku_size                = "Standard_D2s_v3" 
+  zone                                   = "1" 
+```
 
+### 2.3
+#### Add source_image_reference configuration after step 2.2
+
+```bash
   source_image_reference = {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
     sku       = "2022-datacenter-g2"
     version   = "latest"
   }
+```
 
+### 2.4
+#### Add network_interfaces configuration after step 2.3
+
+```bash
   network_interfaces = {
     network_interface_1 = {
       name = module.naming.network_interface.name_unique
@@ -50,13 +60,17 @@ module "virtualmachine1" {
         ip_configuration_1 = {
           name                          = "${module.naming.network_interface.name}-ipconfig1"
           private_ip_subnet_resource_id = local.remote.networking.virtual_networks.spoke_project.virtual_subnets.subnets["AppSubnet"].id 
-          create_public_ip_address      = false # true
-          public_ip_address_name        = null # module.naming.public_ip.name_unique
+          create_public_ip_address      = false 
+          public_ip_address_name        = null 
         }
       }
     }
   }
+```  
+### 2.5
+#### Add data_disk_managed_disks configuration after step 2.4
 
+```bash
   data_disk_managed_disks = {
     disk1 = {
       name                 = "${module.naming.managed_disk.name}-lun0"
