@@ -65,7 +65,7 @@ timestamp() {
 
 echo "init files"
 # ensure folder and terraform.tf already exists
-cp ./../../../../../templates/landingzone/configuration/0-launchpad/launchpad/terraform.tf ./terraform.tf
+
 if [ ! -d ./../../../configuration/1-landingzones ]; then
 
   echo "create directory 1-landingzones"

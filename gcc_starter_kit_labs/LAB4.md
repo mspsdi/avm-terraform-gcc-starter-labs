@@ -59,7 +59,7 @@ module "keyvault1" {
 #### /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/keyvault
 
 ```bash
-cd /tf/avm/gcc_starter_kit/landingzone/configuration/2-solution_accelerators/project/lab
+cd /tf/avm/gcc_starter_kit_labs/landingzone/configuration/2-solution_accelerators/project/lab
 ```
 
 ## Step 6
