@@ -1,2 +1,2 @@
-# terraform-azurerm-mspsdi-avm-res-framework-solutionaccelerator
-terraform avm gcc starter kit framework landing zone
+# terraform-azurerm-azure-accelerator-framework
+terraform azurerm azure accelerator framework landing zone
