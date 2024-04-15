@@ -6,7 +6,7 @@
   version: '3.7'
   services:
     avm:
-      image: gccstarterkit/gccstarterkit-avm-sde:0.1 
+      image: gccstarterkit/gccstarterkit-avm-sde:0.2 
       user: vscode
 
       # Uncomment to access Azure VPN and rebuild container
